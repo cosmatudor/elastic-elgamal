@@ -302,7 +302,7 @@ impl RangeDecomposition {
 
     #[cfg(feature = "std")]
     fn lower_len_estimate(upper_bound: u64) -> u64 {
-        ((upper_bound as f64).log2() * 3.0).ceil() as u64
+       (upper_bound.ilog2() * 3).into()
     }
 
     #[cfg(not(feature = "std"))]
